@@ -41,9 +41,9 @@ The structure of a `Shloka` object is:
     // [String] Shloka number
     "n": "1",
 
-    // [Integer] Index. This represents the overall index of this shloka / line
-    // in the text, and runs monotonically from start to end.
-    "i": 0,
+    // [DEPRECATED] [Integer] Index. This represents the overall index of this shloka / line
+    // in the text, and runs monotonically from start to end. This field is now deprecated and should not be added for new texts.
+    // "i": 0,
 
     // [String] Verse [Shloka]. The actual text of the shloka.
     "v": "वागर्थाविव संपृक्तौ..."
@@ -61,5 +61,5 @@ The structure of a `Shloka` object is:
 }
 ```
 
-The focus is to make this easy to access through computational means, but it's written out in a specifically pretty-printed JSON format to be relatively easily human readable and to lead to clean diffs when modifying any line. It is still a pure JSON object that can be read by any parser, but if you are planning to submit changes to the repository, use the `smart_json_dump` helper function in `code/smart_json_dump.py` to pretty-print your output to the repo style.
+The focus is to make this easy to access through computational means, but it's written out in a specifically pretty-printed JSON format to be relatively easily human readable and to lead to clean diffs when modifying any line. It is still a pure JSON object that can be read by any parser, but if you are planning to submit changes to the repository, run `python3 code/linter.py` to ensure all files are formatted correctly. 
 
